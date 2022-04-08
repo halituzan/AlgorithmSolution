@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>Algorithm Solution</title>
+    <style>
+      #getFunc {
+        border: none;
+        padding: 5px;
+        border: 1px solid darkblue;
+        background-color: blue;
+        color: white;
+        cursor: pointer;
+      }
+      #output {
+        margin: 15px;
+        font-size: 2rem;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Algorithm Solution</h1>
+    <br /><br />
+    <div class="container">
+      <form id="formControl">
+        <div class="row my-3">
+          <label for="number1">Değerler Girin</label>
+          <div class="col-3">
+            <input
+              class="form-control"
+              type="number"
+              name="number1"
+              id="number1"
+              placeholder="Değer 1"
+            />
+          </div>
+          <div class="col-3">
+            <input
+              class="form-control"
+              type="number"
+              name="number2"
+              id="number2"
+              placeholder="Değer 2"
+            />
+          </div>
+          <div class="col-3">
+            <input
+              class="form-control"
+              type="number"
+              name="number3"
+              id="number3"
+              placeholder="Değer 3"
+            />
+          </div>
+          <div class="col-3">
+            <input
+              class="form-control"
+              type="number"
+              name="number4"
+              id="number4"
+              placeholder="Değer 4"
+            />
+          </div>
+        </div>
+        <div class="d-flex justify-content-end">
+          <input
+            class="form-control me-5"
+            type="number"
+            name="number5"
+            id="number5"
+            placeholder="Çekme Limiti Giriniz"
+          />
+          <button type="submit" id="getFunc" class="btn btn-success w-100">
+            Gönder
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div id="output"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
