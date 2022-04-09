@@ -3,19 +3,22 @@ let button = document.getElementById("getFunc");
 let output = document.getElementById("output");
 let firstArray = document.getElementById("firstArray");
 const amount = [];
-const sortAmount = [];
 let k;
+const sortAmount = [];
+
 const getFinalOrder = (k, amount) => {
   while (!amount.every((a) => a <= 0)) {
+    /// Döngünün ne kadar döneceğini belirliyor.
     amount.map((i, ind) => {
       if (i <= k && i !== 0 && i > 0) {
-        sortAmount.push(ind);
-        amount[ind] = i - i;
+        sortAmount.push(ind + 1);
+        amount[ind] = i - k;
       } else {
         amount[ind] = i - k;
       }
     });
   }
+  console.log(sortAmount);
 };
 getFinalOrder(k, amount);
 
