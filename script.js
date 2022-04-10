@@ -1,38 +1,21 @@
-let formControl = document.getElementById("formControl");
-let button = document.getElementById("getFunc");
-let output = document.getElementById("output");
-let firstArray = document.getElementById("firstArray");
-const amount = [];
-let k;
-const sortAmount = [];
-
 const getFinalOrder = (k, amount) => {
-  while (!amount.every((a) => a <= 0)) {
-    /// Döngünün ne kadar döneceğini belirliyor.
-    amount.map((i, ind) => {
-      if (i <= k && i !== 0 && i > 0) {
-        sortAmount.push(ind + 1);
-        amount[ind] = i - k;
-      } else {
-        amount[ind] = i - k;
-      }
-    });
-  }
-  console.log(sortAmount);
-};
-getFinalOrder(k, amount);
-
-formControl.onsubmit = (e) => {
-  e.preventDefault();
-  const formData = new FormData(e.target);
-  const data = {};
-  if (amount.length == 0) {
-    for (let field of formData) {
-      const [key, value] = field;
-      amount.push(Number(value));
+  let sortAmount = [];
+while (!amount.every((a) => a <= 0)) {
+  amount.map((i, ind) => {
+    if (i <= k && i !== 0 && i > 0) {
+      sortAmount.push(ind + 1);
+      amount[ind] = i - k;
+    } else {
+      amount[ind] = i - k;
     }
-  }
-  k = amount.pop(amount[amount.length - 1]);
-  getFinalOrder(k, amount);
-  output.innerHTML = `Sıralama : [${sortAmount}]`;
+  });
+}
+return sortAmount;
 };
+
+console.log("k=5, amount=[12,16,14,6,5,8]\n\nSort:" + getFinalOrder(5, [12, 16, 14, 6, 5, 8]));
+console.log("k=6, amount=[12,16,24,6,5,8,12]\n\nSort:" + getFinalOrder(6,[12,16,24,6,5,8,12]));
+console.log("k=3, amount=[7,5,12,11,2,4,7,12]\n\nSort:" + getFinalOrder(3, [7,5,12,11,2,4,7,12]));
+console.log("k=30, amount=[70,95,212,110,90,114,150,120]\n\nSort:" + getFinalOrder(30, [70,95,212,110,90,114,150,120]));
+console.log("k=300, amount=[1095,2125,1210,990,980,1110,2150,1920,690,855]\n\nSort:" + getFinalOrder(300, [1095,2125,1210,990,980,1110,2150,1920,690,855]));
+
